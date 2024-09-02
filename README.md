@@ -1,2 +1,3 @@
 # Py_Outlook
-Project to download emails from my Outlook account to an Excel file
+Automating manual tasks - DigitalSreeni
+Reading Outlook inbox (or other mail folder) and extracting the required information to an Excel file 
