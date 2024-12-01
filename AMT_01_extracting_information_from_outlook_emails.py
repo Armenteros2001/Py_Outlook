@@ -1,3 +1,22 @@
+import pandas as pd
+import numpy as np
+
+# Crear un DataFrame de ejemplo
+data = {'columna1': ['FC00000061033507Customer Type (', 
+                     'LFC00000062044508', 
+                     'Otro texto', 
+                     'FC12345678901234Extra Text']}
+df = pd.DataFrame(data)
+
+# Reemplazar valores condicionalmente
+df['columna1'] = np.where(
+    (df['columna1'].str.startswith('FC')) & (~df['columna1'].str.contains('LFC')),  # Condición
+    'L' + df['columna1'].str[:17],  # Transformación
+    df['columna1']  # Valor original si no cumple
+)
+
+print(df)
+
 # https://youtu.be/50o6RTvYIpY
 """
 Automating manual tasks - DigitalSreeni
